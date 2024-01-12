@@ -19,20 +19,17 @@
         </div>
     </nav>
 
-    <header id="home">
+    <header id="home" class="animated">
         <div class="container">
             <div class="intro">
                 <h1>Hi, I'm Ardalan Askarian</h1>
                 <p>I'm a web developer based in Saskatoon, Canada.</p>
                 <a href="#projects" class="btn">View My Work</a>
             </div>
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile picture">
-            </div>
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="animated">
         <div class="container">
             <h2>About Me</h2>
             <p>I'm a self-taught web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, Bootstrap, React, and WordPress. I enjoy learning new technologies and taking on new challenges.</p>
@@ -40,32 +37,31 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="animated">
         <div class="container">
             <h2>Some of My Projects</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="weatherapp.jpg" alt="Weather App">
+                <div class="card fadeIn">
+                    <img src="weather logo.jpeg" alt="Weather App">
                     <div class="card-content">
                         <h3>Weather App</h3>
                         <p>A responsive mobile app where it uses phone's location to give weather information of the day and picture of the gained location.</p>
                         <a href="project1.html" class="btn">View Project</a>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="Website.jpg" alt="Dentist Website">
+                <div class="card fadeIn">
+                    <img src="dentist logo.png" alt="Dentist Website">
                     <div class="card-content">
                         <h3>Dentist Website</h3>
-                        <p>A Dentist Website made using HTML, CSS, JavaScript, with a fast and pleasing interface for patient to book an appointment and find Information about dentistary..</p>
+                        <p>A Dentist Website made using HTML, CSS, JavaScript, with a fast and pleasing interface for patient to book an appointment and find Information about dentistary.</p>
                         <a href="project2.html" class="btn">View Project</a>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="project3.jpg" alt="the Sports Scheduling App">
+                <div class="card fadeIn">
+                    <img src="sports logo.jpeg" alt="the Sports Scheduling App">
                     <div class="card-content">
                         <h3>The Sports Scheduling App</h3>
-                        <p>A sport scheduling app, focusing on easy user access and streamlined features.
-                            .</p>
+                        <p>A sport scheduling app, focusing on easy user access and streamlined features.</p>
                         <a href="project3.html" class="btn">View Project</a>
                     </div>
                 </div>
@@ -73,10 +69,10 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="animated">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>If you have any questions, feedback, or inquiries, feel free to contact me using the form below. I'll get back to you as soon as possible.</p>
+            <p class="intro-text">If you have any questions, feedback, or inquiries, feel free to contact me using the form below. I'll get back to you as soon as possible.</p>
             <form action="#" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -94,8 +90,8 @@
             </form>
         </div>
     </section>
-
-    <footer>
+    
+    <footer class="animated">
         <div class="container">
             <p>© 2023 Ardalan Askarian. All rights reserved.</p>
             <ul class="social">
@@ -105,9 +101,20 @@
     </footer>
 
     <script>
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        };
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated-in-view');
+                    }
+                });
+            }, { threshold: 0.5 }); // Adjust the threshold as needed
+
+            const animatedElements = document.querySelectorAll('.animated');
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
     </script>
 </body>
 </html>
