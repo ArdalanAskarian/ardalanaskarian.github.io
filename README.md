@@ -1,1 +1,0 @@
-# ardalanaskarian.github.io
