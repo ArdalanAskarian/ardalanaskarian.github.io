@@ -190,7 +190,7 @@ body {
 
 /* Add space between button and paragraph */
 .card-content {
-    padding: 20px;
+    padding: 10px;
 }
 
 .card h3 {
@@ -313,4 +313,5 @@ footer p {
     .card-content {
         padding: 15px;
     }
+    
 }
