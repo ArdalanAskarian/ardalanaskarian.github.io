@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <nav id="navbar">
         <div class="container">
             <h1 class="logo"><a href="#">My Portfolio</a></h1>
@@ -46,7 +56,7 @@
                     <div class="card-content">
                         <h3>Weather App</h3>
                         <p>A responsive mobile app where it uses phone's location to give weather information of the day and picture of the gained location.</p>
-                        <a href="project1.html" class="btn">Read More</a>
+                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project1.html">Read More</a>
                         <a href="https://github.com/ArdalanAskarian/Ardalan-Weather-App" class="btn">GitHub Link</a>
                     </div>
                 </div>
@@ -54,8 +64,8 @@
                     <img src="dentist logo.png" alt="Dentist Website">
                     <div class="card-content">
                         <h3>Dentistary Website</h3>
-                        <p>A Dentistary Website made using HTML, CSS, JavaScript, with a fast and pleasing interface for patient to book an appointment and find Information about dentistary.</p>
-                        <a href="project2.html" class="btn">Read More</a>
+                        <p>A Dentistary Website made using HTML, CSS, JavaScript, with a fast and pleasing interface for a patient to book an appointment and find Information about dentistry.</p>
+                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project2.html">Read More</a>
                         <a href="project2.html" class="btn">GitHub Link</a>
                     </div>
                 </div>
@@ -64,7 +74,7 @@
                     <div class="card-content">
                         <h3>The Sports Scheduling App</h3>
                         <p>A sport scheduling app, focusing on easy user access and streamlined features.</p>
-                        <a href="project3.html" class="btn">Read More</a>
+                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project3.html">Read More</a>
                         <a href="https://github.com/ArdalanAskarian/Sports-Scheduling-App" class="btn">GitHub Link</a>
                     </div>
                 </div>
@@ -72,8 +82,8 @@
                     <img src="Game logo.png" alt="Darkness Defenders Game">
                     <div class="card-content">
                         <h3>Darkness Defenders Game</h3>
-                        <p>A game where player is the villain being attacked by heroes and needs to defend not only himself but also the castle by creating different towers.</p>
-                        <a href="project3.html" class="btn">Read More</a>
+                        <p>A game where the player is the villain being attacked by heroes and needs to defend not only himself but also the castle by creating different towers.</p>
+                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project4.html">Read More</a>
                         <a href="https://github.com/ArdalanAskarian/Darkness-Defenders-Game-Project" class="btn">GitHub Link</a>
                     </div>
                 </div>
@@ -102,7 +112,7 @@
             </form>
         </div>
     </section>
-    
+
     <footer class="animated">
         <div class="container">
             <p>© 2024 Developed and Designed by Ardalan Askarian. All rights reserved.</p>
@@ -120,15 +130,53 @@
                         entry.target.classList.add('animated-in-view');
                     }
                 });
-            }, { threshold: 0.5 }); // Adjust the threshold as needed
+            }, { threshold: 0.5 }); 
 
             const animatedElements = document.querySelectorAll('.animated');
             animatedElements.forEach(element => {
                 observer.observe(element);
             });
+
+            const modal = document.getElementById('myModal');
+            const modalContent = document.getElementById('modalContent');
+
+            function openModal(projectUrl) {
+                modal.style.display = 'block';
+                modalContent.innerHTML = 'Coming Soon!';
+
+                fetch(projectUrl)
+                    .then(response => response.text())
+                    .then(data => {
+                        modalContent.innerHTML = data;
+                    })
+                    .catch(error => console.error('Error fetching project content:', error));
+            }
+
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            const readMoreButtons = document.querySelectorAll('.read-more');
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const projectUrl = this.getAttribute('data-project-url');
+                    openModal(projectUrl);
+                });
+            });
+
+            document.addEventListener('click', function (event) {
+                if (event.target.classList.contains('close')) {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
         });
     </script>
-    
-    
 </body>
+
 </html>
