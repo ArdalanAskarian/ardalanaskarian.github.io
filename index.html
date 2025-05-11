@@ -1,182 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ardalan Askarian | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalContent"></div>
-        </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalContent"></div>
     </div>
+  </div>
 
-    <nav id="navbar">
-        <div class="container">
-            <h1 class="logo"><a href="#">My Portfolio</a></h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container">
+      <h1 class="logo"><a href="#">Ardalan Askarian</a></h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="animated">
+    <div class="container">
+      <div class="intro">
+        <h1>Hello, I'm Ardalan Askarian</h1>
+        <p>A passionate software developer based in Saskatoon, Canada.</p>
+        <a href="#projects" class="btn">View My Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="animated">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I’m a self-taught developer who loves building beautiful, responsive, and user-friendly websites and apps. I’m experienced in HTML, CSS, JavaScript, Bootstrap, React, and WordPress. I'm always curious and ready to learn new technologies.</p>
+      <a href="resume.pdf" class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="animated">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <!-- Project 1 -->
+        <div class="card fadeIn">
+          <img src="weather logo.jpeg" alt="Weather App"/>
+          <div class="card-content">
+            <h3>Weather App</h3>
+            <p>This responsive mobile app detects your current location and displays real-time weather data with background images representing your location.</p>
+            <a href="javascript:void(0);" class="btn read-more" data-project-url="project1.html">Read More</a>
+            <a href="https://github.com/ArdalanAskarian/Ardalan-Weather-App" class="btn" target="_blank">GitHub</a>
+          </div>
         </div>
-    </nav>
 
-    <header id="home" class="animated">
-        <div class="container">
-            <div class="intro">
-                <h1>Hi, I'm Ardalan Askarian</h1>
-                <p>I'm a software developer based in Saskatoon, Canada.</p>
-                <a href="#projects" class="btn">View My Works</a>
-            </div>
+        <!-- Project 2 -->
+        <div class="card fadeIn">
+          <img src="dentist logo.png" alt="Dentistry Website"/>
+          <div class="card-content">
+            <h3>Dentistry Website</h3>
+            <p>A modern, clean website for a dental clinic with features like appointment booking and service info. Built using HTML, CSS, and JavaScript.</p>
+            <a href="javascript:void(0);" class="btn read-more" data-project-url="project2.html">Read More</a>
+            <a href="https://github.com/ArdalanAskarian/Dentist-Website" class="btn" target="_blank">GitHub</a>
+          </div>
         </div>
-    </header>
 
-    <section id="about" class="animated">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I'm a self-taught web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, Bootstrap, React, and WordPress. I enjoy learning new technologies and taking on new challenges.</p>
-            <a href="resume.pdf" class="btn">Download Resume</a>
+        <!-- Project 3 -->
+        <div class="card fadeIn">
+          <img src="sports logo.jpeg" alt="Sports Scheduler App"/>
+          <div class="card-content">
+            <h3>Sports Scheduling App</h3>
+            <p>An intuitive app designed to help users plan and manage sports activities with ease and flexibility.</p>
+            <a href="javascript:void(0);" class="btn read-more" data-project-url="project3.html">Read More</a>
+            <a href="https://github.com/ArdalanAskarian/Sports-Scheduling-App" class="btn" target="_blank">GitHub</a>
+          </div>
         </div>
-    </section>
 
-    <section id="projects" class="animated">
-        <div class="container">
-            <h2>Some of My Projects</h2>
-            <div class="grid">
-                <div class="card fadeIn">
-                    <img src="weather logo.jpeg" alt="Weather App">
-                    <div class="card-content">
-                        <h3>Weather App</h3>
-                        <p>A responsive mobile app where it uses phone's location to give weather information of the day and picture of the gained location.</p>
-                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project1.html">Read More</a>
-                        <a href="https://github.com/ArdalanAskarian/Ardalan-Weather-App" class="btn">GitHub Link</a>
-                    </div>
-                </div>
-                <div class="card fadeIn">
-                    <img src="dentist logo.png" alt="Dentist Website">
-                    <div class="card-content">
-                        <h3>Dentistary Website</h3>
-                        <p>A Dentistary Website made using HTML, CSS, JavaScript, with a fast and pleasing interface for a patient to book an appointment and find Information about dentistry.</p>
-                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project2.html">Read More</a>
-                        <a href="project2.html" class="btn">GitHub Link</a>
-                    </div>
-                </div>
-                <div class="card fadeIn">
-                    <img src="sports logo.jpeg" alt="the Sports Scheduling App">
-                    <div class="card-content">
-                        <h3>The Sports Scheduling App</h3>
-                        <p>A sport scheduling app, focusing on easy user access and streamlined features.</p>
-                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project3.html">Read More</a>
-                        <a href="https://github.com/ArdalanAskarian/Sports-Scheduling-App" class="btn">GitHub Link</a>
-                    </div>
-                </div>
-                <div class="card fadeIn">
-                    <img src="Game logo.png" alt="Darkness Defenders Game">
-                    <div class="card-content">
-                        <h3>Darkness Defenders Game</h3>
-                        <p>A game where the player is the villain being attacked by heroes and needs to defend not only himself but also the castle by creating different towers.</p>
-                        <a href="javascript:void(0);" class="btn read-more" data-project-url="project4.html">Read More</a>
-                        <a href="https://github.com/ArdalanAskarian/Darkness-Defenders-Game-Project" class="btn">GitHub Link</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Project 4 -->
+        <div class="card fadeIn">
+          <img src="Game logo.png" alt="Darkness Defenders Game"/>
+          <div class="card-content">
+            <h3>Darkness Defenders</h3>
+            <p>A tower-defense-style game where you play the villain, defending your castle from invading heroes. Build towers, upgrade, and strategize!</p>
+            <a href="javascript:void(0);" class="btn read-more" data-project-url="project4.html">Read More</a>
+            <a href="https://github.com/ArdalanAskarian/Darkness-Defenders-Game-Project" class="btn" target="_blank">GitHub</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="animated">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="intro-text">If you have any questions, feedback, or inquiries, feel free to contact me using the form below. I'll get back to you as soon as possible.</p>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+  <!-- Contact Section -->
+  <section id="contact" class="animated">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>If you have any questions or would like to collaborate, feel free to reach out using the form below.</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required/>
         </div>
-    </section>
-
-    <footer class="animated">
-        <div class="container">
-            <p>© 2024 Developed and Designed by Ardalan Askarian. All rights reserved.</p>
-            <ul class="social">
-                <li><a href="https://www.linkedin.com/in/ardalan-askarian-79221a24b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2TkvcRnLR%2FeNPx8LKmIiJQ%3D%3D"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required/>
         </div>
-    </footer>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated-in-view');
-                    }
-                });
-            }, { threshold: 0.5 }); 
+  <!-- Footer -->
+  <footer class="animated">
+    <div class="container">
+      <p>© 2024 Ardalan Askarian. All rights reserved.</p>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/ardalan-askarian-79221a24b" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </footer>
 
-            const animatedElements = document.querySelectorAll('.animated');
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-
-            const modal = document.getElementById('myModal');
-            const modalContent = document.getElementById('modalContent');
-
-            function openModal(projectUrl) {
-                modal.style.display = 'block';
-                modalContent.innerHTML = 'Coming Soon!';
-
-                fetch(projectUrl)
-                    .then(response => response.text())
-                    .then(data => {
-                        modalContent.innerHTML = data;
-                    })
-                    .catch(error => console.error('Error fetching project content:', error));
-            }
-
-            function closeModal() {
-                modal.style.display = 'none';
-            }
-
-            const readMoreButtons = document.querySelectorAll('.read-more');
-            readMoreButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const projectUrl = this.getAttribute('data-project-url');
-                    openModal(projectUrl);
-                });
-            });
-
-            document.addEventListener('click', function (event) {
-                if (event.target.classList.contains('close')) {
-                    closeModal();
-                }
-            });
-
-            window.addEventListener('click', function (event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated-in-view');
+          }
         });
-    </script>
-</body>
+      }, { threshold: 0.5 });
 
+      document.querySelectorAll('.animated').forEach(el => observer.observe(el));
+
+      const modal = document.getElementById('myModal');
+      const modalContent = document.getElementById('modalContent');
+
+      const openModal = (projectUrl) => {
+        modal.style.display = 'block';
+        modalContent.innerHTML = 'Loading...';
+        fetch(projectUrl)
+          .then(response => response.text())
+          .then(html => modalContent.innerHTML = html)
+          .catch(err => modalContent.innerHTML = 'Error loading content.');
+      };
+
+      document.querySelectorAll('.read-more').forEach(btn => {
+        btn.addEventListener('click', () => openModal(btn.dataset.projectUrl));
+      });
+
+      document.querySelector('.close').addEventListener('click', () => modal.style.display = 'none');
+      window.addEventListener('click', e => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+    });
+  </script>
+</body>
 </html>
