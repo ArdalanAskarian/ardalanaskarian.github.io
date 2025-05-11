@@ -23,3 +23,20 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+/* script.js */
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('darkModeToggle');
+  // Load saved theme
+  const theme = localStorage.getItem('theme');
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggle.textContent = '☀️';
+  }
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+});
